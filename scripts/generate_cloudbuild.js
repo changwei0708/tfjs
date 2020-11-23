@@ -227,6 +227,9 @@ function generateCloudbuild(packages, print = true) {
       if (step.waitFor) {
         step.waitFor = step.waitFor.filter(id => id && !EXCLUDE_STEPS.has(id))
                            .map(id => makeStepId(id, packageName));
+        if (step.id === 'test-browser-tfjs-layers') {
+          step.waitFor.push('test-tfjs-backend-webgl');
+        }
       }
     }
   }
