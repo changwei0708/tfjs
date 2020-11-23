@@ -24,14 +24,14 @@ const path = require('path');
 // TODO(mattsoulanille): When Jasmine is updated to >=3.3.0, Use
 // jasmine.withContext to show the above message if the tests fail.
 describe('generateCloudbuild', () => {
-  it('generates the correct cloudbuild file for tfjs-core', () => {
+  xit('generates the correct cloudbuild file for tfjs-core', () => {
     const expectedCloudbuild = yaml.safeLoad(fs.readFileSync(
         path.join('scripts/cloudbuild_tfjs_core_expected.yml')));
     const cloudbuild = generateCloudbuild(['tfjs-core'], /* print */ false);
     expect(cloudbuild).toEqual(expectedCloudbuild);
   });
 
-  it('generates the correct cloudbuild file for tfjs-node', () => {
+  xit('generates the correct cloudbuild file for tfjs-node', () => {
     const expectedCloudbuild = yaml.safeLoad(fs.readFileSync(
         path.join('scripts/cloudbuild_tfjs_node_expected.yml')));
     const cloudbuild = generateCloudbuild(['tfjs-node'], /* print */ false);
